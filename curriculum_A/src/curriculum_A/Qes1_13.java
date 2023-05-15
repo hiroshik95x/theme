@@ -54,13 +54,13 @@ public class Qes1_13 {
 		// ・整数型 1000
 		it = 1000;
 		// ・長整数型 10000
-		lng = 10000;
+		lng = 10000L;
 		// ・単精度浮動小数点数型 9.5
 		flo = 9.5f;
 		// ・倍精度浮動小数点数型 10.5
 		dbl = 10.5d;
 		// ・文字型 a
-		chr = 0x0061;
+		chr = 'a';
 		// ・文字列型 ハロー
 		str = "ハロー";
 		// ・ブーリアン型 true
@@ -82,9 +82,7 @@ public class Qes1_13 {
 		// 0.105  10.5割る100をする
 		System.out.println(dbl / sht);
 		// -90  10引く100をする
-		System.out.println(byt - sht);
-		// 改行
-		System.out.println("");
+		System.out.println(byt - sht + "\n");
 		
 		// Q5 次のプログラムを実行すると「ハローJAVA2023」という結果が表示されます。
 		// 「ハローJAVA43」と表示とさせたいのですが、意図通りに動きません。正しく動作するように修正してください。
@@ -97,9 +95,7 @@ public class Qes1_13 {
 		// 43を代入
 		int num2 = num + num1;
 		// ハローJAVA43
-		System.out.println("ハローJAVA" + num2);
-		// 改行
-		System.out.println("");
+		System.out.println("ハローJAVA" + num2 + "\n");
 		
 		// Q6 『』で囲われた人の情報を変数にして、formatの通りコンソールに出力してください
 		// ローカル変数に代入し○○に入れてください
@@ -124,20 +120,16 @@ public class Qes1_13 {
 		// 「体重は○○kgです」
 		System.out.println("体重は" + weight + "kgです");
 		// 「好きな食べ物は○○です」
-		System.out.println("好きな食べ物は" + food + "です");
-		// 改行
-		System.out.println("");
+		System.out.println("好きな食べ物は" + food + "です" + "\n");
 		
 		// Q7 6で作成した自己紹介に続いてBMIが出力されるようにしてください
 		// 「BMIは○○です」
 		// ただし計算は数値を直書きせず、全て変数を使ってすること
 		
-		// BMIの数値を代入
-		double bmi = Math.ceil(weight / ((height / 100) * (height / 100)));
+		// 小数点第２位で切り上げたBMIの数値を代入
+		double bmi = Math.ceil(weight / ((height / sht) * (height / sht))* sht) /sht;
 		// 「BMIは○○です」
-		System.out.println("BMIは" + bmi + "です");
-		// 改行
-		System.out.println("");
+		System.out.println("BMIは" + bmi + "です" + "\n");
 		
 		// Q8 6で宣言した変数に再代入し下記の通りコンソールに出力してください
 		
@@ -165,9 +157,7 @@ public class Qes1_13 {
 		// 小数点第１位までのBMI数値を代入
 		String bmiDecimalPoint1 = String.format("%.1f" , weight / ((height / 100) * (height / 100)));
 		// 出力する処理
-		System.out.println("BMIは" + bmiDecimalPoint1 + "です");
-		// 改行
-		System.out.println("");
+		System.out.println("BMIは" + bmiDecimalPoint1 + "です" + "\n");
 		
 		// Q9 8で使用した変数【年齢・身長・体重】の数値を和算で自己代入し、下記の通りコンソールに出力してください
 		
@@ -188,12 +178,10 @@ public class Qes1_13 {
 		// 好きな食べ物はオムライスです
 		System.out.println("好きな食べ物は" + food + "です");
 		// BMIは11.31です	
-		// 小数点第２位までのBMI数値を代入
+		// 小数点第２位までのBMI数値を代
 		String bmiDecimalPoint2 = String.format("%.2f" , weight / ((height / 100) * (height / 100)));
 		// 出力する処理
-		System.out.println("BMIは" + bmiDecimalPoint2 + "です");
-		// 改行
-		System.out.println("");
+		System.out.println("BMIは" + bmiDecimalPoint2 + "です" + "\n");
 		
 		// Q10 8で使用した年齢が25歳以上ならtrueが出力されるようにしてください。ただしif文は使いません
 		
@@ -202,9 +190,7 @@ public class Qes1_13 {
 		// 年齢が25以上であればtrueを返す
 		boolean str2 = age >= 25;
 		// 結果を出力
-		System.out.println(str2);
-		// 改行
-		System.out.println("");
+		System.out.println(str2 + "\n");
 		
 		// Q11 8で使用した【年齢・身長・体重】を文字列型に型変換し繋げて出力してください
 		
@@ -221,9 +207,7 @@ public class Qes1_13 {
 		// 体重
 		String weightStr = String.valueOf(weight);
 		// 出力する処理
-		System.out.println(ageStr + heightStr + weightStr);
-		// 改行
-		System.out.println("");
+		System.out.println(ageStr + heightStr + weightStr + "\n");
 		
 		// Q12 11で変換した【年齢・身長】を整数型に変換して出力してください
 		// 文字列型を整数型へ変換
@@ -232,9 +216,7 @@ public class Qes1_13 {
 		int heightInt = (int)Double.parseDouble(heightStr);
 		// 出力する処理
 		System.out.println(ageInt);
-		System.out.println(heightInt);
-		// 改行
-		System.out.println("");
+		System.out.println(heightInt + "\n");
 		
 		// Q13 12で変換した【年齢・身長】で【年齢が25もしくは身長が160以上】であればtrueを出力してください
 		// ただしif文は使わないでください
