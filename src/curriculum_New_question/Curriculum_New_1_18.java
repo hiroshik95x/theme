@@ -16,7 +16,9 @@ public class Curriculum_New_1_18 {
 		product(2, 2);
 
 		// Q3メソッドの呼び出し
-		order(null);
+		// 整数型の配列を定義し、引数に渡す
+		int[] arrays = {1, 2};
+		order(arrays);
 
 		// Q4メソッドの呼び出し
 		overload(1.0, 2.0);
@@ -52,17 +54,15 @@ public class Curriculum_New_1_18 {
 	}
 
 	// Q3：引数として整数の配列を渡すと、受け取った値を順番にコンソールに出力するメソッドを作成してください
-	public static void order(int[] args) {
+	public static void order(int[] arrays) {
 
-		// 整数型の配列を定義
-		int[] array = {1, 2};
-
-		for(int i = 0; array.length > i; i++) {
+		for(int i = 0; arrays.length > i; i++) {
 
 			// 配列を順番に出力
-			System.out.println(array[i]);
+			System.out.println(arrays[i]);
 
 		}
+
 	}
 
 	// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
@@ -104,7 +104,7 @@ public class Curriculum_New_1_18 {
 	// Q6：引数にQ5で作成したメソッドの返り値を受け取り、受け取った配列の要素の平均値をコンソールに出力するメソッドを作成してください。
 	// ※小数点以下も表示されるようにしてください。
 	public static double average(int[] array2) {
-		
+
 		// Q5メソッドの呼び出し
 		int[] array = random(2);
 
@@ -122,7 +122,7 @@ public class Curriculum_New_1_18 {
 			// nums3に配列分を和算
 			nums3 += nums2[i];
 
-			// 平均値の掲載結果を変数に代入
+			// 平均値の計算結果を変数に代入
 			heikin = nums3 / 2;
 
 		}
@@ -140,10 +140,9 @@ public class Curriculum_New_1_18 {
 		double heikin2 = average(null);
 
 		// 50以上以下を判断
-		boolean heikinBool = heikin2 > 50 ? true : false;
+		boolean heikinBool = heikin2 >= 50 ? true : false;
 
 		// コンソール出力
 		System.out.println("\n" + heikinBool);
 	}
-
 }
