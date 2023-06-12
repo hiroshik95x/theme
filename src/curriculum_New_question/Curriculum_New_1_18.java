@@ -23,8 +23,14 @@ public class Curriculum_New_1_18 {
 		// Q4メソッドの呼び出し
 		overload(1.0, 2.0);
 
+		// Q5メソッドの呼び出し、averageメソッドの引数に渡す
+		int[] array2 = random(2);
+
+		// Q6メソッドの呼び出し、boolメソッドの引数に渡す
+		double heikin = average(array2);
+
 		// Q7メソッドの呼び出し
-		bool(0);
+		bool(heikin);
 
 	}
 
@@ -105,11 +111,8 @@ public class Curriculum_New_1_18 {
 	// ※小数点以下も表示されるようにしてください。
 	public static double average(int[] array2) {
 
-		// Q5メソッドの呼び出し
-		int[] array = random(2);
-
 		// int配列からdouble配列に変換
-		double[] nums2 = Arrays.stream(array).asDoubleStream().toArray();
+		double[] nums2 = Arrays.stream(array2).asDoubleStream().toArray();
 
 		// 平均値の受け取り
 		double heikin = 0;
@@ -136,11 +139,8 @@ public class Curriculum_New_1_18 {
 	// Q7：引数にQ6で作成したメソッドの返り値を受け取り、受け取った値が50以上ならばtrueそれ以外はfalseを返しコンソールに出力してください
 	public static void bool(double heikin) {
 
-		// Q6メソッドの呼び出し
-		double heikin2 = average(null);
-
 		// 50以上以下を判断
-		boolean heikinBool = heikin2 >= 50 ? true : false;
+		boolean heikinBool = heikin >= 50 ? true : false;
 
 		// コンソール出力
 		System.out.println("\n" + heikinBool);
