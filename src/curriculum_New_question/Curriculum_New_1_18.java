@@ -126,7 +126,7 @@ public class Curriculum_New_1_18 {
 			nums3 += nums2[i];
 
 			// 平均値の計算結果を変数に代入
-			heikin = nums3 / 2;
+			heikin = nums3 / array2.length;
 
 		}
 		// コンソール出力
