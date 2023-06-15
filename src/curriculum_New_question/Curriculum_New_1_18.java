@@ -9,8 +9,14 @@ public class Curriculum_New_1_18 {
 	public static void main(String[] args) {
 		// 作成したメソッドをここで呼び出してください
 
+		// 「Hello JavaSE 」を変数に代入
+		String str = "Hello JavaSE ";
+
+		// 「11」を変数に代入
+		int it = 11;
+
 		// Q1メソッドの呼び出し
-		hello();
+		hello(str, it);
 
 		// Q2メソッドの呼び出し
 		product(2, 2);
@@ -21,7 +27,7 @@ public class Curriculum_New_1_18 {
 		order(arrays);
 
 		// Q4メソッドの呼び出し
-		overload(1.0, 2.0);
+		product(1.0, 2.0);
 
 		// Q5メソッドの呼び出し、averageメソッドの引数に渡す
 		int[] array2 = random(2);
@@ -35,15 +41,9 @@ public class Curriculum_New_1_18 {
 	}
 
 	// Q1：引数に文字列型と整数型をいれてコンソールに「Hello JavaSE 11」と出力するメソッドを作成してください。
-	public static void hello() {
+	public static void hello(String str, int it) {
 
-		// 「Hello JavaSE 」を変数に代入
-		String str = "Hello JavaSE ";
-
-		// 「11」を変数に代入
-		int it = 11;
-
-		// コンソール出力
+		// 出力値を引数に受け取り、コンソール出力
 		System.out.println(str + it + "\n");
 
 	}
@@ -72,7 +72,7 @@ public class Curriculum_New_1_18 {
 	}
 
 	// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
-	public static void overload(double num1, double num2) {
+	public static void product(double num1, double num2) {
 
 		// 和算結果を変数に格納
 		double nums = num1 + num2;
