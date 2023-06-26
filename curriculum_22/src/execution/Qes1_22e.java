@@ -1,5 +1,8 @@
 package execution;
 
+// Objectsパッケージ利用の宣言
+import java.util.Objects;
+
 /*
 下記がコンソールに出力されるように作成してください
 
@@ -25,12 +28,15 @@ public class Qes1_22e {
 
 		// Qes1_22pクラスの呼び出し
 		Qes1_22p processClass = new Qes1_22p();
-
-		// 各コンソール出力
-		System.out.println(processClass.helloJapan);
-		System.out.println(processClass.sushi);
-		System.out.println(processClass.japaneseMeal);
-		System.out.println(processClass.dateTime);
+		
+		// nullチェック
+		if(Objects.nonNull(processClass)) {
+			// 各コンソール出力
+			System.out.println(processClass.helloJapan);
+			System.out.println(processClass.sushi);
+			System.out.println(processClass.japaneseMeal);
+			System.out.println(processClass.dateTime);
+		}
 
 	}
 
