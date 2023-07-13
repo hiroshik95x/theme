@@ -7,11 +7,8 @@ import java.util.Random;
 // Scannerパッケージ利用の宣言
 import java.util.Scanner;
 
-// processパッケージのNameクラスの使用宣言
-import process.Name;
 // processパッケージのStatusクラスの使用宣言
 import process.Status;
-
 /*
 
 名前を入力したら下記がコンソールに出力されるように作ってください
@@ -55,34 +52,21 @@ public class Main {
 		int speed = random.nextInt(1000) + 1;
 		int defence = random.nextInt(1000) + 1;
 
-		// スーパークラスのインスタンス化
-		Name name = new Name(userName);
-
 		// サブクラスのインスタンス化
 		Status userStatus = new Status(userName, hp, mp, attack, speed, defence);
 
-		// Nameクラスのsetterメソッドに値を代入した変数を渡す
-		name.setUserName(userName);
-
-		// Statusクラスの各setterメソッドにランダム値を代入した変数を渡す
-		userStatus.setHp(hp);
-		userStatus.setMp(mp);
-		userStatus.setAttack(attack);
-		userStatus.setSpeed(speed);
-		userStatus.setDefence(defence);
-
 		// nullチェック
-		if(Objects.nonNull(name)) {
+		if(Objects.nonNull(userStatus)) {
 
-			// NameクラスのgetUserNameの値を取得し、コンソール出力
-			System.out.println("こんにちは 「 " + name.getUserName() + " 」 さん");
+			// getterの値を取得し、コンソール出力
+			System.out.println("こんにちは 「 " + userStatus.getUserName() + " 」 さん");
 
 		}
 
 		// nullチェック
 		if(Objects.nonNull(userStatus)) {
 
-			// Statusクラスの各getterの値を取得し、コンソール出力
+			// 各getterの値を取得し、コンソール出力
 			System.out.println("ステータス");
 			System.out.println("HP：" + userStatus.getHp());
 			System.out.println("MP：" + userStatus.getMp());
@@ -92,6 +76,9 @@ public class Main {
 			System.out.println("\n" + "さあ冒険に出かけよう！");
 
 		}
+
+		// コンソール入力を閉じる
+		scan.close();
 
 	}
 
