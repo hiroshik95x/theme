@@ -1,56 +1,7 @@
 package process;
 
-/*
-
-名前を入力したら下記がコンソールに出力されるように作ってください
-	条件：数値は毎回変わるように作ってください
-	 	 サブクラスを使用してください
-		 スーパークラスを使用してください
-		 getterとsetterを使用してください
-		 packageを2つ作ってメインと処理を分けてください
-		 命名する場合は規則にのっとってください
-		 コンストラクタを使用してください
-
-	こんにちは 「 名前 」 さん
-	ステータス
-	HP：849
-	MP：862
-	攻撃力：375
-	素早さ：937
-	防御力：24
-
-	さあ冒険に出かけよう！
-
- */
-
-//スーパークラス
-class Name {
-
-	// フィールドに変数を定義
-	private String userName;
-
-	// コンストラクタ
-	public Name(String userName) {
-
-		// 引数で受け取ったユーザー名入力値をフィールドに初期値として格納
-		this.userName = userName;
-
-	}
-
-	// setterメソッド
-	public void setUserName(String userName) {
-
-		// 受け取った値「ユーザー名の入力値」をフィールドに代入
-		this.userName = userName;
-
-	}
-
-	// フィールドの値を取得
-	public String getUserName() {
-		return userName;
-	}
-
-}
+// Randomパッケージの使用宣言
+import java.util.Random;
 
 // サブクラス
 public class Status extends Name {
@@ -61,59 +12,78 @@ public class Status extends Name {
 	private int attack;
 	private int speed;
 	private int defence;
+	private int[] statusArray = {hp, mp, attack, speed, defence};
+
+	// 乱数の準備
+	Random random = new Random();
 
 	// コンストラクタ
-	public Status(String userName, int hp, int mp, int attack,  int speed, int defence) {
+	public Status(String userName) {
 
 		// 親クラスのコンストラクタを呼び出し
 		super(userName);
 
-		// 引数で受け取った各値を各フィールド変数に初期値として格納
-		this.hp = hp;
-		this.mp = mp;
-		this.attack = attack;
-		this.speed = speed;
-		this.defence = defence;
+		for(int i = 0; i < statusArray.length; i++) {
+
+			// 配列にランダム値を代入
+			this.statusArray[i] = random.nextInt(1000) + 1;
+
+			// 各値を各フィールド変数に初期値として格納
+			this.hp = statusArray[0];
+			this.mp = statusArray[1];
+			this.attack = statusArray[2];
+			this.speed = statusArray[3];
+			this.defence = statusArray[4];
+
+		}
+
+	}
+
+	@Override
+	public String toString() {
+
+		// スーパークラスの文字列を呼び出し、文字列を返す
+		return  super.toString() + "HP：" + getHp() + "\n" + "MP：" + getMp() + "\n" + "攻撃力：" + getAttack() + "\n" + "素早さ：" + getSpeed() + "\n" + "防御力：" + getDefence() + "\n" + "さあ冒険に出かけよう！";
 
 	}
 
 	// setterメソッド
-	public void setHp(int hp) {
+	public void setHp() {
 
-		// 受け取ったランダム値をフィールドに代入
-		this.hp = hp;
-
-	}
-
-	// setterメソッド
-	public void setMp(int mp) {
-
-		// 受け取ったランダム値をフィールドに代入
-		this.mp = mp;
+		// ランダム値をフィールドに代入
+		this.hp = statusArray[0];
 
 	}
 
 	// setterメソッド
-	public void setAttack(int attack) {
+	public void setMp() {
 
-		// 受け取ったランダム値をフィールドに代入
-		this.attack = attack;
-
-	}
-
-	// setterメソッド
-	public void setSpeed(int speed) {
-
-		// 受け取ったランダム値をフィールドに代入
-		this.speed = speed;
+		// ランダム値をフィールドに代入
+		this.mp = statusArray[1];
 
 	}
 
 	// setterメソッド
-	public void setDefence(int defence) {
+	public void setAttack() {
 
-		// 受け取ったランダム値をフィールドに代入
-		this.defence = defence;
+		// ランダム値をフィールドに代入
+		this.attack = statusArray[2];
+
+	}
+
+	// setterメソッド
+	public void setSpeed() {
+
+		// ランダム値をフィールドに代入
+		this.speed = statusArray[3];
+
+	}
+
+	// setterメソッド
+	public void setDefence() {
+
+		// ランダム値をフィールドに代入
+		this.defence = statusArray[4];
 
 	}
 
